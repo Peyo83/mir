@@ -35,7 +35,7 @@ def fragmentar(x, sr, seg):
 def extract_features(signal, sr, hop_length, frame_length):
     import librosa
     return[
-        librosa.feature.rmse(signal, hop_length=hop_length, frame_length=frame_length, center=True)[0],
+        librosa.feature.rms(signal, hop_length=hop_length, frame_length=frame_length, center=True)[0],
         librosa.feature.spectral_centroid(signal, sr=sr, hop_length=hop_length)[0],
         librosa.feature.zero_crossing_rate(signal, frame_length=frame_length, hop_length=hop_length, center=True)[0],
         librosa.feature.spectral_bandwidth(signal, sr=sr, hop_length=hop_length)[0],
